@@ -249,6 +249,7 @@ export default class WaterfallFlow extends React.PureComponent {
                 this._updateIfNeeded()
               }}
               onItemHeightChange={(height, index) => {
+                if(height===0) return;
                 const preHeight = this._itemHeights[index]
                 if (this._itemHeights[index] !== height) {
                   const preAllLoaded = !JSON.parse(JSON.stringify(this._itemHeights)).some(o => o === null)
